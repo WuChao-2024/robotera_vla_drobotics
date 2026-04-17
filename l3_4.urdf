@@ -1,0 +1,6236 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="rel3_4">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.12443 4.6517E-05 -0.0072396"
+        rpy="0 0 0" />
+      <mass
+        value="4.6837" />
+      <inertia
+        ixx="0.0662"
+        ixy="0"
+        ixz="-0.0006"
+        iyy="0.0139"
+        iyz="0"
+        izz="0.071" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="waist_flange_link">
+    <inertial>
+      <origin
+        xyz="0 -3.4487E-18 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="2.6168E-30"
+        ixz="-3.9998E-31"
+        iyy="5.7292E-14"
+        iyz="-1.2292E-30"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_flange_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_flange_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_flange_joint"
+    type="fixed">
+    <origin
+      xyz="-0.04724 0 0.0367"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="waist_flange_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0016625 2.7676E-05 0.0051594"
+        rpy="0 0 0" />
+      <mass
+        value="1.6872" />
+      <inertia
+        ixx="0.0026"
+        ixy="0"
+        ixz="0"
+        iyy="0.0027"
+        iyz="0"
+        izz="0.0031" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.04724 -0.115 -0.0083"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_hip_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.22"
+      upper="0.17"
+      effort="255"
+      velocity="7.28" />
+  </joint>
+  <link
+    name="right_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.00032945 0.037414 -0.13918"
+        rpy="0 0 0" />
+      <mass
+        value="4.0231" />
+      <inertia
+        ixx="0.0113"
+        ixy="-0.0001"
+        ixz="3.948E-07"
+        iyy="0.0168"
+        iyz="0.0007"
+        izz="0.0093" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_hip_roll_link" />
+    <child
+      link="right_hip_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.05"
+      upper="0.52"
+      effort="100"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_hip_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0050009 -0.026529 -0.044556"
+        rpy="0 0 0" />
+      <mass
+        value="5.3204" />
+      <inertia
+        ixx="0.0612"
+        ixy="-0.0006"
+        ixz="0.0041"
+        iyy="0.0661"
+        iyz="0.0081"
+        izz="0.0134" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hip_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.144"
+      rpy="0 -0.5236 0" />
+    <parent
+      link="right_hip_yaw_link" />
+    <child
+      link="right_hip_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.48"
+      upper="2.27"
+      effort="400"
+      velocity="24.94" />
+  </joint>
+  <link
+    name="right_knee_link">
+    <inertial>
+      <origin
+        xyz="0.015765 -9.9637E-05 -0.12078"
+        rpy="0 0 0" />
+      <mass
+        value="2.8" />
+      <inertia
+        ixx="0.0244"
+        ixy="0"
+        ixz="-0.0015"
+        iyy="0.0247"
+        iyz="0.0003"
+        izz="0.0029" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_knee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_knee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_knee_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 -0.36"
+      rpy="0 1.0472 0" />
+    <parent
+      link="right_hip_pitch_link" />
+    <child
+      link="right_knee_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.05"
+      upper="1.05"
+      effort="400"
+      velocity="24.94" />
+  </joint>
+  <link
+    name="right_ankle_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0015632 1.0604E-08 4.8708E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.084037" />
+      <inertia
+        ixx="5.5347E-06"
+        ixy="6.4247E-12"
+        ixz="5.1426E-09"
+        iyy="5.5347E-06"
+        iyz="8.537E-13"
+        izz="6.433E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_ankle_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_ankle_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.36"
+      rpy="0 -0.5236 0" />
+    <parent
+      link="right_knee_link" />
+    <child
+      link="right_ankle_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.66"
+      upper="1.22"
+      effort="100"
+      velocity="13.65" />
+  </joint>
+  <link
+    name="right_ankle_roll_link">
+    <inertial>
+      <origin
+        xyz="0.02644 2.6126E-07 -0.045378"
+        rpy="0 0 0" />
+      <mass
+        value="0.60136" />
+      <inertia
+        ixx="0.0006"
+        ixy="7.3006E-08"
+        ixz="-3.7284E-05"
+        iyy="0.0027"
+        iyz="3.0727E-09"
+        izz="0.0028" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_ankle_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_ankle_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_ankle_pitch_link" />
+    <child
+      link="right_ankle_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.31"
+      upper="0.31"
+      effort="100"
+      velocity="13.65" />
+  </joint>
+  <link
+    name="right_foot_ee_link">
+    <inertial>
+      <origin
+        xyz="-2.7756E-16 0 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="-4.4099E-31"
+        ixz="-4.4858E-28"
+        iyy="5.7292E-14"
+        iyz="-2.8029E-29"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_foot_ee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_foot_ee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_foot_ee_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.068"
+      rpy="0 0 0" />
+    <parent
+      link="right_ankle_roll_link" />
+    <child
+      link="right_foot_ee_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0017 0 0.0052"
+        rpy="0 0 0" />
+      <mass
+        value="1.6872" />
+      <inertia
+        ixx="0.0026"
+        ixy="0"
+        ixz="0"
+        iyy="0.0027"
+        iyz="0"
+        izz="0.0031" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.04724 0.115 -0.0083"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_hip_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.17"
+      upper="1.22"
+      effort="255"
+      velocity="7.28" />
+  </joint>
+  <link
+    name="left_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.00032945 -0.037414 -0.13918"
+        rpy="0 0 0" />
+      <mass
+        value="4.0231" />
+      <inertia
+        ixx="0.0113"
+        ixy="-0.0001"
+        ixz="-3.948E-07"
+        iyy="0.0168"
+        iyz="-0.0007"
+        izz="0.0093" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_hip_roll_link" />
+    <child
+      link="left_hip_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.52"
+      upper="1.05"
+      effort="100"
+      velocity="13.26" />
+  </joint>
+  <link
+    name="left_hip_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0014718 0.026546 -0.044705"
+        rpy="0 0 0" />
+      <mass
+        value="5.319" />
+      <inertia
+        ixx="0.0616"
+        ixy="0.0005"
+        ixz="0.0032"
+        iyy="0.0662"
+        iyz="-0.0083"
+        izz="0.0131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hip_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.144"
+      rpy="0 -0.5236 0" />
+    <parent
+      link="left_hip_yaw_link" />
+    <child
+      link="left_hip_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.48"
+      upper="2.27"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_knee_link">
+    <inertial>
+      <origin
+        xyz="0.016359 9.5663E-05 -0.12248"
+        rpy="0 0 0" />
+      <mass
+        value="2.8" />
+      <inertia
+        ixx="0.0243"
+        ixy="-3.7298E-08"
+        ixz="-0.0015"
+        iyy="0.0247"
+        iyz="-0.0003"
+        izz="0.0029" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_knee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_knee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_knee_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.01 -0.36"
+      rpy="0 1.0472 0" />
+    <parent
+      link="left_hip_pitch_link" />
+    <child
+      link="left_knee_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.05"
+      upper="1.05"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_ankle_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0015632 1.0604E-08 4.8708E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.084037" />
+      <inertia
+        ixx="4.8396E-06"
+        ixy="6.4247E-12"
+        ixz="5.1426E-09"
+        iyy="5.5347E-06"
+        iyz="8.537E-13"
+        izz="6.433E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_ankle_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_ankle_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.36"
+      rpy="0 -0.5236 0" />
+    <parent
+      link="left_knee_link" />
+    <child
+      link="left_ankle_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.66"
+      upper="1.22"
+      effort="100"
+      velocity="13.65" />
+  </joint>
+  <link
+    name="left_ankle_roll_link">
+    <inertial>
+      <origin
+        xyz="0.02644 2.6571E-07 -0.045378"
+        rpy="0 0 0" />
+      <mass
+        value="0.60136" />
+      <inertia
+        ixx="0.0006"
+        ixy="7.2942E-08"
+        ixz="0.0002"
+        iyy="0.0027"
+        iyz="3.08E-09"
+        izz="0.0028" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_ankle_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_ankle_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_ankle_pitch_link" />
+    <child
+      link="left_ankle_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.31"
+      upper="0.31"
+      effort="100"
+      velocity="13.65" />
+  </joint>
+  <link
+    name="left_foot_ee_link">
+    <inertial>
+      <origin
+        xyz="-2.6368E-16 0 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="-4.5517E-30"
+        ixz="-4.4864E-28"
+        iyy="5.7292E-14"
+        iyz="-3.7706E-29"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_foot_ee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_foot_ee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_foot_ee_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.0679999999999948"
+      rpy="0 0 0" />
+    <parent
+      link="left_ankle_roll_link" />
+    <child
+      link="left_foot_ee_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+
+
+
+
+<!--   waist part    -->
+
+
+  <joint
+    name="waist_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="waist_flange_link" />
+    <child
+      link="waist_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+<link
+    name="waist_base_link">
+    <inertial>
+      <origin
+        xyz="-0.00090253 -3.8886E-05 -0.022326"
+        rpy="0 0 0" />
+      <mass
+        value="1.0597" />
+      <inertia
+        ixx="0.0011"
+        ixy="7.3313E-07"
+        ixz="6.9671E-07"
+        iyy="0.0011"
+        iyz="1.5872E-06"
+        izz="0.0013" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="waist_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0090574 2.5517E-09 -0.018735"
+        rpy="0 0 0" />
+      <mass
+        value="0.20427" />
+      <inertia
+        ixx="0.0001"
+        ixy="9.2093E-11"
+        ixz="5.1666E-07"
+        iyy="0.0001"
+        iyz="-7.1818E-11"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.034"
+      rpy="0 0 0" />
+    <parent
+      link="waist_base_link" />
+    <child
+      link="waist_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="110"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="waist_roll_link">
+    <inertial>
+      <origin
+        xyz="-3.1889E-09 -3.1609E-09 -4.8745E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.083945" />
+      <inertia
+        ixx="6.4218E-06"
+        ixy="7.6098E-14"
+        ixz="-1.8377E-12"
+        iyy="6.968E-06"
+        iyz="7.7458E-13"
+        izz="1.1249E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="waist_yaw_link" />
+    <child
+      link="waist_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.26"
+      upper="0.26"
+      effort="110"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="waist_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0006119 7.6707E-09 0.049479"
+        rpy="0 0 0" />
+      <mass
+        value="2.42" />
+      <inertia
+        ixx="0.0094"
+        ixy="-2.2462E-06"
+        ixz="0.0001"
+        iyy="0.0023"
+        iyz="-1.2998E-06"
+        izz="0.0094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/waist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="waist_roll_link" />
+    <child
+      link="waist_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.09"
+      upper="1.22"
+      effort="110"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="torso_flange_link">
+    <inertial>
+      <origin
+        xyz="1.687E-05 -3.5059E-18 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="-3.9075E-30"
+        ixz="5.6717E-30"
+        iyy="5.7292E-14"
+        iyz="7.282E-30"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/torso_flange_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/torso_flange_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso_flange_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.095"
+      rpy="0 0 0" />
+    <parent
+      link="waist_pitch_link" />
+    <child
+      link="torso_flange_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+
+
+
+<!--   torso part    -->
+
+
+  <joint
+    name="torso_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="torso_flange_link" />
+    <child
+      link="torso_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="torso_base_link">
+    <inertial>
+      <origin
+        xyz="-0.0081721 -0.00032449 0.13822"
+        rpy="0 0 0" />
+      <mass
+        value="10.42" />
+      <inertia
+        ixx="0.1209"
+        ixy="-0.0001"
+        ixz="0.0102"
+        iyy="0.1048"
+        iyz="0.0004"
+        izz="0.0665" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/torso_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/torso_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="neck_flange_link">
+    <inertial>
+      <origin
+        xyz="-8.6736E-19 -3.5017E-18 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="-2.8571E-30"
+        ixz="5.6547E-30"
+        iyy="5.7292E-14"
+        iyz="-5.801E-31"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_flange_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_flange_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_flange_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.303"
+      rpy="0 0 0" />
+    <parent
+      link="torso_base_link" />
+    <child
+      link="neck_flange_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_arm_flange_link">
+    <inertial>
+      <origin
+        xyz="-5.152E-18 -2.7756E-17 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="3.113E-30"
+        ixz="-7.9572E-30"
+        iyy="5.7292E-14"
+        iyz="-4.7132E-29"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_arm_flange_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_arm_flange_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_flange_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.112 0.243"
+      rpy="0 0 0" />
+    <parent
+      link="torso_base_link" />
+    <child
+      link="left_arm_flange_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_arm_flange_link">
+    <inertial>
+      <origin
+        xyz="-1.847E-18 -1.3878E-17 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="-1.6617E-30"
+        ixz="-4.4962E-30"
+        iyy="5.7292E-14"
+        iyz="-2.525E-30"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_arm_flange_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_arm_flange_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_flange_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.112 0.243"
+      rpy="0 0 0" />
+    <parent
+      link="torso_base_link" />
+    <child
+      link="right_arm_flange_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+
+  <!--   head part    -->
+  <joint
+    name="neck_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="neck_flange_link" />
+    <child
+      link="neck_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+ <link
+    name="neck_base_link">
+    <inertial>
+      <origin
+        xyz="0.00044058 -3.1316E-05 0.020437"
+        rpy="0 0 0" />
+      <mass
+        value="0.54879" />
+      <inertia
+        ixx="0.000336"
+        ixy="1E-06"
+        ixz="-1E-06"
+        iyy="0.000311"
+        iyz="2.377E-07"
+        izz="0.000379" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="neck_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.033363 0.00038788 0.085731"
+        rpy="0 0 0" />
+      <mass
+        value="0.57738" />
+      <inertia
+        ixx="0.000363"
+        ixy="1E-06"
+        ixz="-9E-05"
+        iyy="0.000478"
+        iyz="1E-06"
+        izz="0.000427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="neck_base_link" />
+    <child
+      link="neck_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.05"
+      upper="1.05"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="neck_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.018182 0.00091372 0.11159"
+        rpy="0 0 0" />
+      <mass
+        value="1.4643" />
+      <inertia
+        ixx="0.006914"
+        ixy="-2.8E-05"
+        ixz="0.001054"
+        iyy="0.007955"
+        iyz="0.000133"
+        izz="0.005899" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/neck_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.04 0 0.0905"
+      rpy="0 0 0" />
+    <parent
+      link="neck_yaw_link" />
+    <child
+      link="neck_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.17"
+      upper="0.54"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="3.4694E-18 -6.9344E-18 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="9.2152E-31"
+        ixz="2.068E-29"
+        iyy="5.7292E-14"
+        iyz="5.8797E-30"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.014255 0 0.10675"
+      rpy="0 0 0" />
+    <parent
+      link="neck_pitch_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="mic_link">
+    <inertial>
+      <origin
+        xyz="6.9389E-18 -1.1928E-20 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="8.366E-31"
+        ixz="5.1463E-30"
+        iyy="5.7292E-14"
+        iyz="3.6879E-30"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/mic_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/mic_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mic_joint"
+    type="fixed">
+    <origin
+      xyz="-0.014255 0 0.18884"
+      rpy="0 0 0" />
+    <parent
+      link="neck_pitch_link" />
+    <child
+      link="mic_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="stereo_link">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 -3.5421E-18 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="1.375E-08" />
+      <inertia
+        ixx="5.7292E-14"
+        ixy="-1.9198E-30"
+        ixz="6.3109E-29"
+        iyy="5.7292E-14"
+        iyz="2.5778E-31"
+        izz="5.7292E-14" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/stereo_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/stereo_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="stereo_joint"
+    type="fixed">
+    <origin
+      xyz="0.059712 0 0.13282"
+      rpy="0 0.5236 0" />
+    <parent
+      link="neck_pitch_link" />
+    <child
+      link="stereo_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+
+
+
+
+  <!--   left_arm part    -->
+  <joint
+    name="left_arm_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_arm_flange_link" />
+    <child
+      link="left_arm_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+   <link
+    name="left_arm_base_link">
+    <inertial>
+      <origin
+        xyz="4.1581E-05 0.023631 3.5535E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.99112" />
+      <inertia
+        ixx="0.000802"
+        ixy="1E-06"
+        ixz="-1E-06"
+        iyy="0.000861"
+        iyz="-3E-06"
+        izz="0.000807" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_arm_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_arm_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00013365 0.10261 -0.0035426"
+        rpy="0 0 0" />
+      <mass
+        value="0.46431" />
+      <inertia
+        ixx="0.000868"
+        ixy="7.2517E-07"
+        ixz="-7.5289E-07"
+        iyy="0.000868"
+        iyz="0.000137"
+        izz="0.001185" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_arm_base_link" />
+    <child
+      link="left_shoulder_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="left_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0032462 4.0571E-06 -0.091652"
+        rpy="0 0 0" />
+      <mass
+        value="2.1944" />
+      <inertia
+        ixx="0.019872"
+        ixy="-7.0549E-07"
+        ixz="0.000639"
+        iyy="0.019903"
+        iyz="7E-06"
+        izz="0.00221" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.133 -0.016"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_pitch_link" />
+    <child
+      link="left_shoulder_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.56"
+      upper="2.53"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="left_arm_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.003519 0.00031494 -0.26353"
+        rpy="0 0 0" />
+      <mass
+        value="0.46223" />
+      <inertia
+        ixx="0.00118"
+        ixy="-1E-06"
+        ixz="0.000136"
+        iyy="0.000868"
+        iyz="-7.2691E-07"
+        izz="0.000873" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_arm_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_arm_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_roll_link" />
+    <child
+      link="left_arm_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-4.36"
+      upper="1.22"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="left_elbow_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0056997 -0.0045023 -0.03171"
+        rpy="0 0 0" />
+      <mass
+        value="1.6034" />
+      <inertia
+        ixx="0.004377"
+        ixy="3.6E-05"
+        ixz="-0.00054"
+        iyy="0.004463"
+        iyz="0.000215"
+        izz="0.001464" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_elbow_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.016 0 -0.294"
+      rpy="0 0 0" />
+    <parent
+      link="left_arm_yaw_link" />
+    <child
+      link="left_elbow_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.36"
+      upper="0.7"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="left_elbow_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.0006503 -0.0023824 0.067809"
+        rpy="0 0 0" />
+      <mass
+        value="0.91938" />
+      <inertia
+        ixx="0.001459"
+        ixy="-1.3E-05"
+        ixz="-3E-05"
+        iyy="0.001214"
+        iyz="8E-06"
+        izz="0.00085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_elbow_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_elbow_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.016 0 -0.239"
+      rpy="0 0 0" />
+    <parent
+      link="left_elbow_pitch_link" />
+    <child
+      link="left_elbow_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="left_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0064749 -0.00014717 0.00023213"
+        rpy="0 0 0" />
+      <mass
+        value="0.59056" />
+      <inertia
+        ixx="0.00033"
+        ixy="-2E-06"
+        ixz="3E-06"
+        iyy="0.000318"
+        iyz="-2E-06"
+        izz="0.000334" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_elbow_yaw_link" />
+    <child
+      link="left_wrist_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.79"
+      upper="0.79"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="left_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="0.015728 8.3393E-10 -0.030005"
+        rpy="0 0 0" />
+      <mass
+        value="0.091311" />
+      <inertia
+        ixx="6.9E-05"
+        ixy="9.3969E-12"
+        ixz="-3.1E-05"
+        iyy="8.9E-05"
+        iyz="3.3842E-13"
+        izz="5.2E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_wrist_pitch_link" />
+    <child
+      link="left_wrist_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="left_hand_flange_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="0.000000001" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_flange_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_flange_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_flange_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.051"
+      rpy="3.1415926 0 0" />
+    <parent
+      link="left_wrist_roll_link" />
+    <child
+      link="left_hand_flange_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+
+
+
+
+
+ <!--  right_arm part    -->
+  <joint
+    name="right_arm_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_arm_flange_link" />
+    <child
+      link="right_arm_base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+    <link
+    name="right_arm_base_link">
+    <inertial>
+      <origin
+        xyz="-4.1581E-05 -0.023631 3.5535E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.99112" />
+      <inertia
+        ixx="0.000802"
+        ixy="1E-06"
+        ixz="1E-06"
+        iyy="0.000861"
+        iyz="3E-06"
+        izz="0.000807" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_arm_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_arm_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.00013365 -0.10261 -0.0035426"
+        rpy="0 0 0" />
+      <mass
+        value="0.46431" />
+      <inertia
+        ixx="0.000868"
+        ixy="7.2509E-07"
+        ixz="7.5292E-07"
+        iyy="0.000876"
+        iyz="-0.000137"
+        izz="0.001185" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_arm_base_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="right_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="0.0032462 -4.0571E-06 -0.091652"
+        rpy="0 0 0" />
+      <mass
+        value="2.1944" />
+      <inertia
+        ixx="0.019872"
+        ixy="-7.0549E-07"
+        ixz="-0.000639"
+        iyy="0.019903"
+        iyz="-7E-06"
+        izz="0.00221" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.133 -0.016"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_shoulder_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2.53"
+      upper="0.56"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="right_arm_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.003519 0.00031494 -0.26353"
+        rpy="0 0 0" />
+      <mass
+        value="0.46223" />
+      <inertia
+        ixx="0.00118"
+        ixy="-1E-06"
+        ixz="0.000136"
+        iyy="0.000868"
+        iyz="-7.2693E-07"
+        izz="0.000873" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_arm_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_arm_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_roll_link" />
+    <child
+      link="right_arm_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.22"
+      upper="4.36"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="right_elbow_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0056997 -0.0045023 -0.03171"
+        rpy="0 0 0" />
+      <mass
+        value="1.6034" />
+      <inertia
+        ixx="0.004377"
+        ixy="3.6E-05"
+        ixz="-0.00054"
+        iyy="0.004463"
+        iyz="0.000215"
+        izz="0.001464" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_elbow_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.016 0 -0.294"
+      rpy="0 0 0" />
+    <parent
+      link="right_arm_yaw_link" />
+    <child
+      link="right_elbow_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.36"
+      upper="0.7"
+      effort="95"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="right_elbow_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.0006503 -0.0023824 0.067809"
+        rpy="0 0 0" />
+      <mass
+        value="0.91938" />
+      <inertia
+        ixx="0.001459"
+        ixy="-1.3E-05"
+        ixz="-3E-05"
+        iyy="0.001214"
+        iyz="8E-06"
+        izz="0.00085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_elbow_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_elbow_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.016 0 -0.239"
+      rpy="0 0 0" />
+    <parent
+      link="right_elbow_pitch_link" />
+    <child
+      link="right_elbow_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="right_wrist_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0064749 -0.00014717 0.00023213"
+        rpy="0 0 0" />
+      <mass
+        value="0.59056" />
+      <inertia
+        ixx="0.00033"
+        ixy="-2E-06"
+        ixz="3E-06"
+        iyy="0.000318"
+        iyz="-2E-06"
+        izz="0.000334" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_wrist_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_elbow_yaw_link" />
+    <child
+      link="right_wrist_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.79"
+      upper="0.79"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="right_wrist_roll_link">
+    <inertial>
+      <origin
+        xyz="0.015728 8.3393E-10 -0.030005"
+        rpy="0 0 0" />
+      <mass
+        value="0.091311" />
+      <inertia
+        ixx="6.9E-05"
+        ixy="9.3969E-12"
+        ixz="-3.1E-05"
+        iyy="8.9E-05"
+        iyz="3.3842E-13"
+        izz="5.2E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_wrist_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_wrist_pitch_link" />
+    <child
+      link="right_wrist_roll_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="35"
+      velocity="4.19" />
+  </joint>
+  <link
+    name="right_hand_flange_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="0.000000001" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_flange_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_flange_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_flange_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.051"
+      rpy="3.1415926 0 0" />
+    <parent
+      link="right_wrist_roll_link" />
+    <child
+      link="right_hand_flange_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+  <!--  left hand part-->
+  <joint
+    name="left_hand_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1415926 3.1415926 -1.5708" />
+    <parent
+      link="left_hand_flange_link" />
+    <child
+      link="left_hand_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_hand_link">
+    <inertial>
+      <origin
+        xyz="0.00706464145485438 0.0076544706699529 0.0577714073734172"
+        rpy="0 0 0" />
+      <mass
+        value="0.53910397" />
+      <inertia
+        ixx="0.00064437"
+        ixy="-0.0000027"
+        ixz="-0.00000218"
+        iyy="0.00046461"
+        iyz="-0.00005111"
+        izz="0.00027759" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_hand_ee_link">
+    <inertial>
+      <origin
+        xyz="1.17432671491422E-17 -5.43272925313458E-18 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ee_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_ee_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.065"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_link" />
+    <child
+      link="left_hand_ee_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_back_link">
+    <inertial>
+      <origin
+        xyz="-0.0111854009013878 0.00534932535803127 -0.00363532039690179"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000039" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_back_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_back_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.065"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_link" />
+    <child
+      link="left_hand_back_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_thumb_bend_link">
+    <inertial>
+      <origin
+        xyz="-0.00116653487945898 -0.0144315035573879 6.50679294475175E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0118729" />
+      <inertia
+        ixx="0.0000016"
+        ixy="0.00000004"
+        ixz="0.00000000001"
+        iyy="0.00000062"
+        iyz="-0.00000008"
+        izz="0.00000162" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_bend_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_bend_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_thumb_bend_joint"
+    type="revolute">
+    <origin
+      xyz="0.0095 -0.0228 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_link" />
+    <child
+      link="left_hand_thumb_bend_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.832"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_thumb_rota_link1">
+    <inertial>
+      <origin
+        xyz="-0.000437432733760378 -0.028807330635135 0.00132757524885703"
+        rpy="0 0 0" />
+      <mass
+        value="0.13269894" />
+      <inertia
+        ixx="0.00003594"
+        ixy="0.00000761"
+        ixz="0.00000196"
+        iyy="0.00001702"
+        iyz="-0.00000176"
+        izz="0.00004286" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rota_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rota_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_thumb_rota_joint1"
+    type="revolute">
+    <origin
+      xyz="0.0083177 -0.028599 -0.00178"
+      rpy="0 0.2618 0.0407" />
+    <parent
+      link="left_hand_thumb_bend_link" />
+    <child
+      link="left_hand_thumb_rota_link1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.698"
+      upper="1.745"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_thumb_rotaback_link1">
+    <inertial>
+      <origin
+        xyz="0.00145637138027919 0.0296284344604527 -0.00757346109377556"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000006" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rotaback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rotaback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_thumb_rotaback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 -0.0553000000000008 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_thumb_rota_link1" />
+    <child
+      link="left_hand_thumb_rotaback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_thumb_rota_link2">
+    <inertial>
+      <origin
+        xyz="-0.000240482586038429 -0.0238728313638291 0.00154692123419337"
+        rpy="0 0 0" />
+      <mass
+        value="0.03536566" />
+      <inertia
+        ixx="0.00000706"
+        ixy="-0.00000005"
+        ixz="0.00000035"
+        iyy="0.00000346"
+        iyz="-0.00000005"
+        izz="0.00000828" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rota_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rota_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_thumb_rota_joint2"
+    type="revolute">
+    <origin
+      xyz="0 -0.0553 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_thumb_rota_link1" />
+    <child
+      link="left_hand_thumb_rota_link2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_thumb_rotaback_link2">
+    <inertial>
+      <origin
+        xyz="-0.000232493698975893 0.0221575852414717 -0.00841360955813028"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000008" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rotaback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rotaback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_thumb_rotaback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 -0.0502276494650542 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_thumb_rota_link2" />
+    <child
+      link="left_hand_thumb_rotaback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_thumb_rota_tip">
+    <inertial>
+      <origin
+        xyz="2.36104538697823E-14 5.55111512312578E-17 -6.57807142090405E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rota_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_thumb_rota_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_thumb_rota_joint3"
+    type="fixed">
+    <origin
+      xyz="0 -0.0502276494650542 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_thumb_rota_link2" />
+    <child
+      link="left_hand_thumb_rota_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_index_bend_link">
+    <inertial>
+      <origin
+        xyz="-0.000259146448963428 6.74012389935627E-05 -0.00444233020178331"
+        rpy="0 0 0" />
+      <mass
+        value="0.06910833" />
+      <inertia
+        ixx="0.00001677"
+        ixy="0.00000000001"
+        ixz="0.00000013"
+        iyy="0.0000174"
+        iyz="0.00000000001"
+        izz="0.00000345" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_bend_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_bend_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_index_bend_joint"
+    type="revolute">
+    <origin
+      xyz="0.0065 -0.0265 0.0899"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_link" />
+    <child
+      link="left_hand_index_bend_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.174"
+      upper="0.174"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_index_rota_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908945199 -2.61400285840561E-05 0.0335209977332161"
+        rpy="0 0 0" />
+      <mass
+        value="0.06298297" />
+      <inertia
+        ixx="0.00001686"
+        ixy="0.00000000001"
+        ixz="-0.00000019"
+        iyy="0.00001738"
+        iyz="-0.00000028"
+        izz="0.0000032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rota_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rota_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_index_joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0178"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_index_bend_link" />
+    <child
+      link="left_hand_index_rota_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_index_rotaback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943660115351 -0.000148368270819019 -0.0241202518238416"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rotaback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rotaback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_index_rotaback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000017"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_index_rota_link1" />
+    <child
+      link="left_hand_index_rotaback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_index_rota_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296092031062 -0.000237417985933245 0.0205234467102676"
+        rpy="0 0 0" />
+      <mass
+        value="0.01588724" />
+      <inertia
+        ixx="0.00000283"
+        ixy="0.00000000001"
+        ixz="-0.00000007"
+        iyy="0.00000277"
+        iyz="-0.00000012"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rota_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rota_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_index_joint2"
+    
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_index_rota_link1" />
+    <child
+      link="left_hand_index_rota_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_index_rotaback_link2">
+    <inertial>
+      <origin
+        xyz="-0.00620189675075576 -6.48686874226319E-05 -0.0160035528595176"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000003" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rotaback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rotaback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_index_rotaback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089652"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_index_rota_link2" />
+    <child
+      link="left_hand_index_rotaback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_index_rota_tip">
+    <inertial>
+      <origin
+        xyz="-1.45715904620314E-13 3.06699110552699E-15 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rota_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_index_rota_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_index_rota_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089652"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_index_rota_link2" />
+    <child
+      link="left_hand_index_rota_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_mid_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908943979 -2.61400285863425E-05 0.033520997733216"
+        rpy="0 0 0" />
+      <mass
+        value="0.06298297" />
+      <inertia
+        ixx="0.00001686"
+        ixy="0.00000000001"
+        ixz="-0.00000019"
+        iyy="0.00001738"
+        iyz="-0.00000028"
+        izz="0.0000032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_mid_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_mid_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_mid_joint1"
+    type="revolute">
+    <origin
+      xyz="0.0065 -0.004 0.1082"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_link" />
+    <child
+      link="left_hand_mid_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_midback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943655492361 -0.000148368229172243 -0.0241202507684899"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_midback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_midback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_midback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000016"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_mid_link1" />
+    <child
+      link="left_hand_midback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_mid_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296092030943 -0.000237417985935192 0.020523446710267"
+        rpy="0 0 0" />
+      <mass
+        value="0.01588724" />
+      <inertia
+        ixx="0.00000283"
+        ixy="0.00000000001"
+        ixz="-0.00000007"
+        iyy="0.00000277"
+        iyz="-0.00000012"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_mid_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_mid_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_mid_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_mid_link1" />
+    <child
+      link="left_hand_mid_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_midback_link2">
+    <inertial>
+      <origin
+        xyz="-0.00620189675075747 -6.48686874269045E-05 -0.0160035528594599"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000003" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_midback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_midback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_midback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089652"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_mid_link2" />
+    <child
+      link="left_hand_midback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_mid_tip">
+    <inertial>
+      <origin
+        xyz="-1.461790757884E-13 1.42420797377696E-15 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_mid_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_mid_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_mid_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089652"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_mid_link2" />
+    <child
+      link="left_hand_mid_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_ring_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908944578 -2.61400285863495E-05 0.033520997733216"
+        rpy="0 0 0" />
+      <mass
+        value="0.06298297" />
+      <inertia
+        ixx="0.00001686"
+        ixy="0.00000000001"
+        ixz="-0.00000019"
+        iyy="0.00001738"
+        iyz="-0.00000028"
+        izz="0.0000032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ring_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ring_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_ring_joint1"
+    type="revolute">
+    <origin
+      xyz="0.0065 0.016 0.1052"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_link" />
+    <child
+      link="left_hand_ring_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_ringback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943656999468 -0.000148368458185583 -0.0241202516088916"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ringback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ringback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_ringback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000016"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_ring_link1" />
+    <child
+      link="left_hand_ringback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_ring_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296092031007 -0.000237417985935261 0.0205234467102673"
+        rpy="0 0 0" />
+      <mass
+        value="0.01588724" />
+      <inertia
+        ixx="0.00000283"
+        ixy="0.00000000001"
+        ixz="-0.00000007"
+        iyy="0.00000277"
+        iyz="-0.00000012"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ring_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ring_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_ring_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_ring_link1" />
+    <child
+      link="left_hand_ring_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_ringback_link2">
+    <inertial>
+      <origin
+        xyz="-0.00620189675075757 -6.48686874260423E-05 -0.0160035528595246"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000003" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ringback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ringback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_ringback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089648"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_ring_link2" />
+    <child
+      link="left_hand_ringback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_ring_tip">
+    <inertial>
+      <origin
+        xyz="-1.46076727103317E-13 5.44703171456717E-16 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ring_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_ring_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_ring_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089648"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_ring_link2" />
+    <child
+      link="left_hand_ring_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_pinky_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908947409 -2.61400285863425E-05 0.0335209977332161"
+        rpy="0 0 0" />
+      <mass
+        value="0.06298297" />
+      <inertia
+        ixx="0.00001686"
+        ixy="0.00000000001"
+        ixz="-0.00000019"
+        iyy="0.00001738"
+        iyz="-0.00000028"
+        izz="0.0000032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinky_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinky_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_pinky_joint1"
+    type="revolute">
+    <origin
+      xyz="0.0065 0.036 0.1022"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_link" />
+    <child
+      link="left_hand_pinky_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_pinkyback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943654150395 -0.000148368424664987 -0.0241202510324771"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinkyback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinkyback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_pinkyback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000017"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_pinky_link1" />
+    <child
+      link="left_hand_pinkyback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_pinky_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296085615216 -0.000237418021557086 0.0205234470012377"
+        rpy="0 0 0" />
+      <mass
+        value="0.01588724" />
+      <inertia
+        ixx="0.00000283"
+        ixy="0.00000000001"
+        ixz="-0.00000007"
+        iyy="0.00000277"
+        iyz="-0.00000012"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinky_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinky_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_pinky_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_pinky_link1" />
+    <child
+      link="left_hand_pinky_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="left_hand_pinkyback_link2">
+    <inertial>
+      <origin
+        xyz="-0.00620189675075573 -6.48686874271109E-05 -0.0160035528595332"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000303" />
+      <inertia
+        ixx="0.00000038"
+        ixy="0.00000000001"
+        ixz="-0.00000003"
+        iyy="0.00000031"
+        iyz="0.00000000001"
+        izz="0.00000012" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinkyback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinkyback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_pinkyback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089645"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_pinky_link2" />
+    <child
+      link="left_hand_pinkyback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_hand_pinky_tip">
+    <inertial>
+      <origin
+        xyz="-1.43497193294539E-13 7.63278329429795E-16 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000004" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinky_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/left_hand_pinky_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hand_pinky_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089645"
+      rpy="0 0 0" />
+    <parent
+      link="left_hand_pinky_link2" />
+    <child
+      link="left_hand_pinky_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+
+  <!--  right hand part-->
+
+  <joint
+    name="right_hand_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1415926 3.1415926 1.5708" />
+    <parent
+      link="right_hand_flange_link" />
+    <child
+      link="right_hand_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_hand_link">
+    <inertial>
+      <origin
+        xyz="0.00700550657043245 -0.00662473822139784 0.0592937963177517"
+        rpy="0 0 0" />
+      <mass
+        value="0.53903004" />
+      <inertia
+        ixx="0.00064214"
+        ixy="0.00000004"
+        ixz="-0.00000217"
+        iyy="0.00046462"
+        iyz="0.00005128"
+        izz="0.00027541" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_hand_ee_link">
+    <inertial>
+      <origin
+        xyz="1.18879466404654E-16 1.07248378177844E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ee_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_ee_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.065"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_link" />
+    <child
+      link="right_hand_ee_link" />
+    <axis
+      xyz="0 0 0" />
+<dynamics
+      damping="0"
+      friction="0." />
+  </joint>
+  <link
+    name="right_hand_back_link">
+    <inertial>
+      <origin
+        xyz="-0.00808345001756333 -0.00879945676181564 -0.00911221718746465"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000047" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_back_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_back_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.065"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_link" />
+    <child
+      link="right_hand_back_link" />
+    <axis
+      xyz="0 0 0" />
+<dynamics
+      damping="0"
+      friction="0." />
+  </joint>
+  <link
+    name="right_hand_thumb_bend_link">
+    <inertial>
+      <origin
+        xyz="-0.00116534359347947 0.0144358799651009 5.40622585411162E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.01174632" />
+      <inertia
+        ixx="0.0000016"
+        ixy="-0.00000004"
+        ixz="0.00000000001"
+        iyy="0.00000062"
+        iyz="0.00000008"
+        izz="0.00000162" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_bend_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_bend_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_thumb_bend_joint"
+    type="revolute">
+    <origin
+      xyz="0.0095 0.0228 0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_link" />
+    <child
+      link="right_hand_thumb_bend_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.832"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_thumb_rota_link1">
+    <inertial>
+      <origin
+        xyz="-0.000331619090515523 0.0285281934834321 0.0013995737215488"
+        rpy="0 0 0" />
+      <mass
+        value="0.13268042" />
+      <inertia
+        ixx="0.00003681"
+        ixy="-0.0000079"
+        ixz="0.00000196"
+        iyy="0.00001699"
+        iyz="0.00000181"
+        izz="0.00004375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rota_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rota_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_thumb_rota_joint1"
+    type="revolute">
+    <origin
+      xyz="0.008316 0.028599 -0.0017795"
+      rpy="0 0.2618 -0.0407" />
+    <parent
+      link="right_hand_thumb_bend_link" />
+    <child
+      link="right_hand_thumb_rota_link1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.698"
+      upper="1.745"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_thumb_rotaback_link1">
+    <inertial>
+      <origin
+        xyz="0.0014351011122833 -0.0296289369145487 -0.00759117586269843"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000006" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rotaback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rotaback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_thumb_rotaback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0.0552999999999944 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_thumb_rota_link1" />
+    <child
+      link="right_hand_thumb_rotaback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_thumb_rota_link2">
+    <inertial>
+      <origin
+        xyz="-0.000244667843814802 0.0236920086267235 0.00153214646165801"
+        rpy="0 0 0" />
+      <mass
+        value="0.03530927" />
+      <inertia
+        ixx="0.00000787"
+        ixy="0.00000001"
+        ixz="0.00000034"
+        iyy="0.0000035"
+        iyz="0.00000019"
+        izz="0.00000903" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rota_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rota_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_thumb_rota_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.0553 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_thumb_rota_link1" />
+    <child
+      link="right_hand_thumb_rota_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_thumb_rotaback_link2">
+    <inertial>
+      <origin
+        xyz="-0.000166374257450498 -0.0226103074954173 -0.00841982891878508"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000008" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rotaback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rotaback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_thumb_rotaback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0.0502276499414724 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_thumb_rota_link2" />
+    <child
+      link="right_hand_thumb_rotaback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_thumb_rota_tip">
+    <inertial>
+      <origin
+        xyz="1.68206107604898E-06 2.77555756156289E-17 -3.51801920928096E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rota_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_thumb_rota_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_thumb_rota_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0.0502276499414724 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_thumb_rota_link2" />
+    <child
+      link="right_hand_thumb_rota_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_index_bend_link">
+    <inertial>
+      <origin
+        xyz="-0.000259146448963352 6.74012389936529E-05 -0.00444233020178321"
+        rpy="0 0 0" />
+      <mass
+        value="0.06910833" />
+      <inertia
+        ixx="0.00001677"
+        ixy="0.00000001"
+        ixz="0.00000013"
+        iyy="0.0000174"
+        iyz="-0.00000014"
+        izz="0.00000345" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_bend_link.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_bend_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_index_bend_joint"
+    type="revolute">
+    <origin
+      xyz="0.0065 0.0265 0.0899"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_link" />
+    <child
+      link="right_hand_index_bend_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.175"
+      upper="0.175"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_index_rota_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908945284 -2.61400285841845E-05 0.0335209977332161"
+        rpy="0 0 0" />
+      <mass
+        value="0.0626025" />
+      <inertia
+        ixx="0.00001641"
+        ixy="0.00000000001"
+        ixz="-0.0000002"
+        iyy="0.00001693"
+        iyz="-0.00000022"
+        izz="0.00000318" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rota_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rota_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_index_joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0178"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_index_bend_link" />
+    <child
+      link="right_hand_index_rota_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_index_rotaback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943654037572 -0.000148368127257548 -0.0241202507617987"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rotaback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rotaback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_index_rotaback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000016"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_index_rota_link1" />
+    <child
+      link="right_hand_index_rotaback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_index_rota_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296092031092 -0.000237417985933065 0.0205234467102677"
+        rpy="0 0 0" />
+      <mass
+        value="0.01571813" />
+      <inertia
+        ixx="0.00000275"
+        ixy="-0.00000001"
+        ixz="-0.00000008"
+        iyy="0.0000027"
+        iyz="-0.0000001"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rota_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rota_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_index_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_index_rota_link1" />
+    <child
+      link="right_hand_index_rota_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_index_rotaback_link2">
+    <inertial>
+      <origin
+        xyz="-0.0062018967507559 -6.48686874372487E-05 -0.0160035528594694"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000003" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rotaback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rotaback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_index_rotaback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089662"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_index_rota_link2" />
+    <child
+      link="right_hand_index_rotaback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_index_rota_tip">
+    <inertial>
+      <origin
+        xyz="-1.4302274642386E-13 3.43475248243408E-15 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rota_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_index_rota_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_index_rota_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089662"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_index_rota_link2" />
+    <child
+      link="right_hand_index_rota_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_mid_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908944902 -2.61400285864908E-05 0.0335209977332161"
+        rpy="0 0 0" />
+      <mass
+        value="0.06298297" />
+      <inertia
+        ixx="0.00001686"
+        ixy="0.00000000001"
+        ixz="-0.00000019"
+        iyy="0.00001738"
+        iyz="-0.00000028"
+        izz="0.0000032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_mid_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_mid_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_mid_joint1"
+    type="revolute">
+    <origin
+      xyz="0.0065 0.004 0.1082"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_link" />
+    <child
+      link="right_hand_mid_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_midback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943655433693 -0.000148368259473213 -0.02412025085026"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_midback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_midback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_midback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000017"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_mid_link1" />
+    <child
+      link="right_hand_midback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_mid_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296095641527 -0.000237417872813638 0.020523446735056"
+        rpy="0 0 0" />
+      <mass
+        value="0.01588724" />
+      <inertia
+        ixx="0.00000283"
+        ixy="0.00000000001"
+        ixz="-0.00000007"
+        iyy="0.00000277"
+        iyz="-0.00000012"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_mid_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_mid_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_mid_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_mid_link1" />
+    <child
+      link="right_hand_mid_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_midback_link2">
+    <inertial>
+      <origin
+        xyz="-0.00620189675075615 -6.48686874281665E-05 -0.0160035528595085"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000003" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_midback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_midback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_midback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089661"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_mid_link2" />
+    <child
+      link="right_hand_midback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_mid_tip">
+    <inertial>
+      <origin
+        xyz="-1.43496325932801E-13 1.05991604382183E-15 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_mid_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_mid_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_mid_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089661"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_mid_link2" />
+    <child
+      link="right_hand_mid_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_ring_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908944961 -2.61400285864917E-05 0.033520997733216"
+        rpy="0 0 0" />
+      <mass
+        value="0.06298297" />
+      <inertia
+        ixx="0.00001686"
+        ixy="0.00000000001"
+        ixz="-0.00000019"
+        iyy="0.00001738"
+        iyz="-0.00000028"
+        izz="0.0000032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ring_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ring_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_ring_joint1"
+    type="revolute">
+    <origin
+      xyz="0.0065 -0.016 0.1052"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_link" />
+    <child
+      link="right_hand_ring_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_ringback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943654374128 -0.000148368623041115 -0.0241202508504762"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ringback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ringback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_ringback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000017"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_ring_link1" />
+    <child
+      link="right_hand_ringback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_ring_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296092031052 -0.000237417985935323 0.0205234467102678"
+        rpy="0 0 0" />
+      <mass
+        value="0.01588724" />
+      <inertia
+        ixx="0.00000283"
+        ixy="0.00000000001"
+        ixz="-0.00000007"
+        iyy="0.00000277"
+        iyz="-0.00000012"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ring_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ring_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_ring_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_ring_link1" />
+    <child
+      link="right_hand_ring_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_ringback_link2">
+    <inertial>
+      <origin
+        xyz="-0.00620189675075693 -6.48686874186247E-05 -0.0160035528596291"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000003" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ringback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ringback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_ringback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089662"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_ring_link2" />
+    <child
+      link="right_hand_ringback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_ring_tip">
+    <inertial>
+      <origin
+        xyz="-1.43525816231893E-13 1.05124242644195E-15 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ring_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_ring_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_ring_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089662"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_ring_link2" />
+    <child
+      link="right_hand_ring_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_pinky_link1">
+    <inertial>
+      <origin
+        xyz="0.000543760908947561 -2.61400285864882E-05 0.0335209977332161"
+        rpy="0 0 0" />
+      <mass
+        value="0.06298297" />
+      <inertia
+        ixx="0.00001686"
+        ixy="0.00000000001"
+        ixz="-0.00000019"
+        iyy="0.00001738"
+        iyz="-0.00000028"
+        izz="0.0000032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinky_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinky_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_pinky_joint1"
+    type="revolute">
+    <origin
+      xyz="0.0065 -0.036 0.1022"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_link" />
+    <child
+      link="right_hand_pinky_link1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="1.1"
+      velocity="8.63" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_pinkyback_link1">
+    <inertial>
+      <origin
+        xyz="-0.0115943654497502 -0.000148367535988674 -0.0241202515638382"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000002" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinkyback_link1.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinkyback_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_pinkyback_joint1"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0558000000000017"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_pinky_link1" />
+    <child
+      link="right_hand_pinkyback_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_pinky_link2">
+    <inertial>
+      <origin
+        xyz="0.00203296085615305 -0.000237418021557474 0.0205234470012378"
+        rpy="0 0 0" />
+      <mass
+        value="0.01588724" />
+      <inertia
+        ixx="0.00000283"
+        ixy="0.00000000001"
+        ixz="-0.00000007"
+        iyy="0.00000277"
+        iyz="-0.00000012"
+        izz="0.00000085" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinky_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinky_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_pinky_joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0558"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_pinky_link1" />
+    <child
+      link="right_hand_pinky_link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.919"
+      effort="0.4"
+      velocity="14.38" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="right_hand_pinkyback_link2">
+    <inertial>
+      <origin
+        xyz="-0.00620189675075435 -6.48686874220317E-05 -0.0160035528594588"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000003" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinkyback_link2.STL" />
+      </geometry>
+      <material
+        name="RAL_9003_Signal_White">
+        <color
+          rgba="0.941 0.941 0.941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinkyback_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_pinkyback_joint2"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089662"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_pinky_link2" />
+    <child
+      link="right_hand_pinkyback_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_hand_pinky_tip">
+    <inertial>
+      <origin
+        xyz="-1.40792759395492E-13 1.06858966120171E-15 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00000565" />
+      <inertia
+        ixx="0.00000000001"
+        ixy="0.0000000000"
+        ixz="0.0000000000"
+        iyy="0.00000000001"
+        iyz="0.0000000000"
+        izz="0.00000000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinky_tip.STL" />
+      </geometry>
+      <material
+        name="RAL_9005_Jet_Black">
+        <color
+          rgba="0.055 0.055 0.063 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://xbot_description/l3.4/meshes/right_hand_pinky_tip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hand_pinky_joint3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0422482924089662"
+      rpy="0 0 0" />
+    <parent
+      link="right_hand_pinky_link2" />
+    <child
+      link="right_hand_pinky_tip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+</robot>
+
+

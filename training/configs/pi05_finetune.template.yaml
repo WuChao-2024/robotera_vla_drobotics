@@ -1,0 +1,29 @@
+# [2026-02-06][training:pi05_finetune.template]
+# Stage-1 template only. Fill TBD fields before implementation.
+
+project:
+  name: robotera_vla_pi05
+  run_id: TBD
+
+data:
+  dataset_root: /path/to/robotera_dataset
+  schema_version: v0.1
+  adapter: robotera_custom
+
+model:
+  base_checkpoint: /path/to/pi05_base
+  output_dir: /path/to/output/checkpoints
+
+trainer:
+  optimizer: TBD
+  learning_rate: TBD
+  per_device_batch_size: TBD
+  grad_accumulation_steps: TBD
+  max_train_steps: TBD
+  parallel_strategy: TBD
+  save_interval_steps: TBD
+  eval_interval_steps: TBD
+
+logging:
+  level: INFO
+  format_prefix: "[2026-02-06][training]"

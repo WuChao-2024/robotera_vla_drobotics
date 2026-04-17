@@ -1,0 +1,21 @@
+# 异构数据集定义：任务名称作为 Key
+m7_good2people:
+  type: "LeRobotM7DataConfig"
+  weight: 1.0  # 任务级权重：默认平权
+  repo_id_list:
+    - "/era-ai/lm/dataset/M7_era0/lerobot/Pick_Apple_Mango/2031605"
+    - "/era-ai/lm/dataset/M7_era0/lerobot/Pick_Apple_Mango/2031607"
+    - "/era-ai/lm/dataset/M7_era0/lerobot/Pick_Apple_Mango/2031704"
+  # repo_weights: [1, 1, 0.5] # 不写则默认对上述所有库平权采样
+  action_sequence_keys: ["action"]
+  repack_transforms:
+    images:
+      cam_high: "observation.images.cam_high"
+      cam_left_wrist: "observation.images.cam_left"
+      cam_right_wrist: "observation.images.cam_right"
+    state: "observation.state"
+    actions: "action"
+    prompt: "prompt"
+  base_config:
+     prompt_from_task: true
+
