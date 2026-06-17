@@ -1,0 +1,15 @@
+# Pi05 LeapModel inference server dependencies
+# conda env: robotera_vla_drobotics_convert
+
+torch==2.12.0
+numpy==2.2.6
+einops==0.8.2
+safetensors==0.8.0rc1
+sentencepiece==0.2.1
+opencv-python==4.13.0.92
+scipy==1.15.2
+pin==4.0.0
+pyzmq==27.1.0
+transformers==4.53.2
+hbdk4-compiler==4.10.2a2.dev202603311934+ede3dbc.develop
+leap-llm==1.0.4

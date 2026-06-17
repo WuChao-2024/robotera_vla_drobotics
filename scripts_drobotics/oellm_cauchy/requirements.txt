@@ -1,0 +1,27 @@
+# Pi05 OE-LLM 转换项目依赖
+#
+# 安装:
+#   conda create -n robotera_vla_drobotics_convert python=3.10 -y
+#   conda activate robotera_vla_drobotics_convert
+#
+#   # 1. 先安装 hbdk4（SDK 封闭包，需从 whl 安装）
+#   pip install /path/to/D-Robotics_LLM_S600_1.0.4_SDK/oellm_build/hbdk4_compiler-*.whl
+#   pip install /path/to/D-Robotics_LLM_S600_1.0.4_SDK/oellm_build/hbdk4_runtime_*-nash-*.whl
+#
+#   # 2. 再安装其他依赖
+#   pip install -r requirements.txt
+#
+
+# 核心依赖
+torch>=2.6.0
+numpy>=2.2.0
+safetensors>=0.5.0
+sentencepiece>=0.1.99
+opencv-python-headless>=4.11.0
+pyyaml>=6.0.0
+
+# hbdk4 传递依赖（hbdk4 extra_apis 模块需要）
+matplotlib>=3.10.0
+
+# 本地 leap_llm 包（已内置在 ./leap_llm/，脚本自动加载，无需安装）
+# ./leap_llm

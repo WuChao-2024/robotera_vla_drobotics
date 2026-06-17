@@ -80,6 +80,26 @@ class Pi0Config(_model.BaseModelConfig):
 
         return observation_spec, action_spec
 
+    def load_pytorch(self, train_config, weight_path):
+        """Load PyTorch model from safetensors checkpoint.
+
+        Args:
+            train_config: The training config (unused but kept for API compatibility).
+            weight_path: Path to the model.safetensors file.
+
+        Returns:
+            A PI0Pytorch model loaded with the weights.
+        """
+        from training.models_pytorch.pi0_pytorch import PI0Pytorch
+
+        import safetensors.torch
+        import torch
+
+        model = PI0Pytorch(self)
+        state_dict = safetensors.torch.load_file(weight_path)
+        model.load_state_dict(state_dict, strict=False)
+        return model
+
     def get_freeze_filter(self) -> nnx.filterlib.Filter:
         """Returns the freeze filter based on the model config."""
         filters = []

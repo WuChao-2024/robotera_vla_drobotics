@@ -48,6 +48,91 @@ Detailed hardware and runtime constraints are documented in `docs/HARDWARE_SOFTW
 - Training includes the current M7-oriented baseline and related configs.
 - Inference includes a Docker-based example and Robotera interface definitions for integration on an inference PC.
 
+## PyTorch 推理支持
+
+本项目基于 [OpenPI](https://github.com/Open-Pi/OpenPI) 的 PyTorch 模型实现，新增了 JAX 权重转 PyTorch `.safetensors` 的能力，以及纯 PyTorch 的推理路径。
+
+### 目录结构
+
+```
+training/models_pytorch/
+├── __init__.py
+├── pi0_pytorch.py                  # PI0/PI05 PyTorch 模型（推理用）
+├── gemma_pytorch.py                # PaliGemma + Gemma Expert 封装
+├── preprocessing_pytorch.py        # 图像预处理（PyTorch 实现）
+└── transformers_replace/           # HuggingFace transformers 补丁（adaRMSNorm 支持）
+    └── models/
+        ├── gemma/
+        │   ├── configuration_gemma.py
+        │   └── modeling_gemma.py
+        ├── paligemma/
+        │   └── modeling_paligemma.py
+        └── siglip/
+            ├── check.py
+            └── modeling_siglip.py
+
+scripts/
+└── convert_jax_to_pytorch.py      # JAX checkpoint → PyTorch safetensors 转换脚本
+```
+
+### 使用步骤
+
+#### 1. 安装依赖
+
+确保已安装 `torch`、`transformers==4.53.2`、`safetensors`。
+
+然后需要将 `transformers_replace/` 中的补丁文件复制到已安装的 transformers 包目录下：
+
+```bash
+# 找到 transformers 安装路径
+python -c "import transformers; print(transformers.__file__)"
+
+# 复制补丁文件（覆盖原文件）
+cp training/models_pytorch/transformers_replace/models/gemma/configuration_gemma.py <transformers_path>/models/gemma/
+cp training/models_pytorch/transformers_replace/models/gemma/modeling_gemma.py <transformers_path>/models/gemma/
+cp training/models_pytorch/transformers_replace/models/paligemma/modeling_paligemma.py <transformers_path>/models/paligemma/
+cp training/models_pytorch/transformers_replace/models/siglip/modeling_siglip.py <transformers_path>/models/siglip/
+cp training/models_pytorch/transformers_replace/models/siglip/check.py <transformers_path>/models/siglip/
+```
+
+> **为什么需要打补丁？** PI05 的 action expert 使用 adaRMSNorm 注入 flow-matching timestep，HuggingFace transformers 原生不支持此功能，需要替换相关文件。
+
+#### 2. 转换 JAX 权重为 PyTorch 格式
+
+```bash
+cd /path/to/robotera_vla_drobotics
+
+python scripts/convert_jax_to_pytorch.py \
+    --checkpoint_dir /path/to/jax_checkpoint \
+    --config_name pi05_M7_pp_opensource \
+    --output_path /path/to/pytorch_output
+```
+
+转换后在 `output_path` 下生成 `model.safetensors`。
+
+#### 3. 使用 PyTorch 推理
+
+当 checkpoint 目录下存在 `model.safetensors` 文件时，`create_trained_policy()` 会自动检测并加载 PyTorch 模型：
+
+```python
+from training.interfaces.policies.policy_config import create_trained_policy
+from training.configs.config import get_config
+
+train_config = get_config("pi05_M7_pp_opensource")
+policy = create_trained_policy(
+    train_config,
+    checkpoint_dir="/path/to/pytorch_output",  # 包含 model.safetensors
+    pytorch_device="cuda:0",
+)
+result = policy.infer(obs)
+```
+
+### 支持的模型配置
+
+- `pi05=True, no_state=True, action_dim=38, action_horizon=20`（M7 双臂）
+- 完整支持 PI05 的 adaRMSNorm、time_mlp_in/out 架构
+- 兼容 PI0 模式（state_proj + action_time_mlp）
+
 ## License
 
 This repository is released under the MIT License. See `LICENSE`.
