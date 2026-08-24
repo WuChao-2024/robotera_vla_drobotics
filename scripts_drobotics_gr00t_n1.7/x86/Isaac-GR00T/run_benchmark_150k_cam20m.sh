@@ -1,0 +1,3 @@
+#!/bin/bash
+# 启动 RTX4090 star1-benchmark 20轮评测 (setsid 独立会话, 连本机隧道15563, cam_20m base 权重, 与15562并行)
+sshpass -p 'nj@NJ12.' ssh -p 2223 -o StrictHostKeyChecking=no -o ConnectTimeout=25 chao01.wu@localhost 'setsid bash -c "cd /home/chao01.wu/RoboTrea_issac/star1-benchmark && source /mnt/data/chao.wu/miniconda3/etc/profile.d/conda.sh && conda activate robotrea_issac && export HEADLESS=1 RTX_SKIP_DRIVER_CHECK=1 OMNI_KIT_ACCEPT_EULA=yes OMP_NUM_THREADS=8 CUDA_VISIBLE_DEVICES=0 PYTHONPATH=/home/chao01.wu/RoboTrea_issac/star1-benchmark && taskset -c 0-7 python scripts/vla_test_xbot.py task=Xbot/XbotPAP vla.server=tcp://localhost:15563 +task.max_rollouts=20" </dev/null >/home/chao01.wu/RoboTrea_issac/star1-benchmark/benchmark_150k_cam20m.log 2>&1 & echo BENCHMARK_SPAWNED'

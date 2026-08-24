@@ -34,8 +34,14 @@ logger = logging.getLogger("pi05_jax")
 # 路径常量
 # =============================================================================
 
-ROBOTREA_ROOT = "/home/chao.wu/pi_oellm/ROBOTREA/robotera_vla_drobotics"
-CHECKPOINT_DIR = "/home/chao.wu/pi_oellm/ROBOTREA/M7_pickplace_example_ckpt"
+ROBOTREA_ROOT = os.environ.get(
+    "ROBOTREA_ROOT",
+    "/home/chao01.wu/DeployAnything/GR00T_Dev/robotera_vla_drobotics",
+)
+CHECKPOINT_DIR = os.environ.get(
+    "CHECKPOINT_DIR",
+    "/home/chao01.wu/DeployAnything/GR00T_Dev/weights/roboterax_M7_pickplace_example_ckpt",
+)
 POLICY_NAME = "pi05_M7_pp_opensource"
 DEFAULT_PROMPT = "pick the apple and put it in the bowl."
 

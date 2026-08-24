@@ -1,0 +1,14 @@
+# gr00t_release 板端推理环境 (conda env: gr00t_release, python 3.12.13)
+# 版本与 2026-08-15 70% 评测场所用的系统 dist-packages 逐一对齐 (2026-08-18 安装)
+numpy==1.26.4
+scipy==1.17.1
+pyzmq==27.1.0
+opencv-python==4.11.0.86
+transformers==5.15.0
+torch==2.13.0
+torchvision==0.28.0
+pillow==10.2.0
+# pyCauchyKesai: BPU 运行时接口, pypi 无此包,
+# 已从 /usr/local/lib/python3.12/dist-packages/pyCauchyKesai 拷入本环境 site-packages
+# (cp312 aarch64 编译扩展, 运行时依赖 /usr/hobot 下系统库)
+# torch/torchvision 在 pypi 上解析为 +cu130 构建, 版本字符串与系统一致
