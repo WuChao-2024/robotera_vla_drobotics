@@ -1,0 +1,75 @@
+{
+  "name": "M7 pi0.5 训练",
+  "type": "custom",
+  "category": "AI",
+  "description": "在 LeRobot 数据集上微调 robotera M7 pi0.5 VLA 模型(JAX), 产出与官方 M7_pickplace_example_ckpt 同构的 orbax checkpoint(params/ + assets/), 可供实机推理部署。",
+  "version": "1.1.0",
+  "image": "IMAGE_PLACEHOLDER",
+  "containerCommand": ["sh", "/app/entry/train.sh"],
+  "inputs": [
+    {
+      "id": "assets",
+      "name": "归一化统计 assets",
+      "type": "file",
+      "container": "directory",
+      "payloadMode": "ref",
+      "required": true,
+      "description": "必填, 第一输入。连上游『M7 pi0.5 归一化统计』的 assets 输出(内含 norm_stats.json)"
+    },
+    {
+      "id": "dataset",
+      "name": "数据集 1",
+      "type": "file",
+      "container": "directory",
+      "payloadMode": "ref",
+      "required": true,
+      "description": "必填, 第二输入。一个 LeRobot 数据集根目录(含 meta/ 与 data/)。更多数据集: 在工作流编辑器直接给本算子新增输入端口并连线即可, 端口无命名与数量限制, 均视为数据集"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "model",
+      "name": "orbax checkpoint 目录",
+      "type": "file",
+      "container": "directory",
+      "payloadMode": "ref"
+    }
+  ],
+  "hyperparams": [
+    {"key": "NUM_TRAIN_STEPS", "type": "number", "value": "300000", "description": "训练步数, 原版默认 300000"},
+    {"key": "BATCH_SIZE", "type": "number", "value": "64", "description": "全局批大小(所有 GPU 总和), 原版默认 64"},
+    {"key": "FSDP_DEVICES", "type": "number", "value": "8", "description": "FSDP 设备数; 留空时自动取平台 GPU_LIMIT"},
+    {"key": "SEED", "type": "number", "value": "42"},
+    {"key": "NUM_WORKERS", "type": "number", "value": "16"},
+    {"key": "LOG_INTERVAL", "type": "number", "value": "100"},
+    {"key": "SAVE_INTERVAL", "type": "number", "value": "10000"},
+    {"key": "KEEP_PERIOD", "type": "number", "value": "10000"},
+    {"key": "EMA_DECAY", "type": "string", "value": "0.99"},
+    {"key": "LR_WARMUP_STEPS", "type": "number", "value": "1000"},
+    {"key": "LR_PEAK_LR", "type": "string", "value": "2.5e-5"},
+    {"key": "LR_DECAY_STEPS", "type": "number", "value": "30000"},
+    {"key": "LR_DECAY_LR", "type": "string", "value": "2.5e-6"},
+    {"key": "WANDB_ENABLED", "type": "string", "value": "false", "description": "默认关闭; true 时需容器内可用 wandb"},
+    {"key": "AUTO_NORM_STATS", "type": "string", "value": "1", "description": "上游未连 assets 且缺 norm_stats.json 时自动补算(采样比 SAMPLE_RATIO)"},
+    {"key": "SAMPLE_RATIO", "type": "string", "value": "0.1"},
+    {"key": "BASE_WEIGHT_PATH", "type": "string", "value": "/app/openpi_data/openpi-assets/checkpoints/pi05_base/params", "description": "基座权重路径, 镜像内置官方 pi05_base; 也可覆盖为其他本地 checkpoint"},
+    {"key": "CKPT_DIR", "type": "string", "value": "/tmp/ckpt", "description": "checkpoint 写入目录, 默认容器本地盘(快且不占 200G workspace PVC); 需要跨 pod 重试续训时改为 PVC 内路径(占用约 50G/份)"},
+    {"key": "EXP_NAME", "type": "string", "value": "", "description": "实验名, 留空自动取 RUN_ID"},
+    {"key": "EXTRA_TRAIN_ARGS", "type": "string", "value": "", "description": "透传给 train.py 的额外 tyro 参数, 原版 CLI 能调的字段全部可达, 如 --model.action-horizon 10 --optimizer.weight-decay 0.01"}
+  ],
+  "resources": {
+    "cpuRequest": "8",
+    "cpuLimit": "32",
+    "memoryRequest": "32Gi",
+    "memoryLimit": "96Gi",
+    "gpuType": "NVIDIA GPU",
+    "gpuLimit": "8",
+    "sharedMemorySize": "32Gi"
+  },
+  "runtimeContract": {
+    "longRunning": true,
+    "artifacts": {"requiresChecksum": true, "requiresLineage": true, "requiresManifest": true},
+    "resources": {"requiresGpu": true, "minGpuCount": 1}
+  },
+  "skillDefinition": "第一输入 assets(必须): 归一化统计输出; 第二输入 dataset(必须): LeRobot 数据集根目录; 用户可在工作流编辑器给本算子任意新增输入端口连更多同构数据集(端口无命名与数量限制, 均视为数据集)。执行 JAX pi0.5 微调: 运行时拷贝源码树+动态生成 data_config, 基座权重为镜像内置 pi05_base(NoActionWeightLoader 自动重初始化 action proj), 同 run 重试自动 --resume。超参默认值与原版 TrainConfig 一致, EXTRA_TRAIN_ARGS 可透传全部原版 CLI 字段。输出 OUTPUT_DIR/model(params/+assets/), 与官方 M7_pickplace_example_ckpt 同构。300k 步/8 卡为 24h 级长任务, 节点 timeout 需按步数配置。"
+}
